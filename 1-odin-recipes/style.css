@@ -19,7 +19,7 @@ img {
     margin-bottom: 15px;
 }
 
-a {
+.recipe-box a {
     background-color: lightgoldenrodyellow;
     border: 1px solid gray;
     color: black;
