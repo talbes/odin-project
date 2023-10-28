@@ -1,7 +1,5 @@
 # Odin project
 
-Go to 
-
 ## 0-odin-intro
 Basic HTML elements, tags, attributes
 
