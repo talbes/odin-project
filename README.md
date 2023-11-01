@@ -9,3 +9,6 @@ Extension: Layout with different layout systems
 
 # 2-homepage-assignment
 Assignment to create modern website using flexbox
+
+# 3-javascript-fundamentals
+Simple scripting exercises
