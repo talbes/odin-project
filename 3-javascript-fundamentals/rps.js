@@ -1,7 +1,7 @@
-const game = document.getElementById("btn2");
-game.addEventListener("click", play);
-const picked = document.getElementById("picked");
-const selection = Array.of("rock", "paper", "scissor");
+const buttons = document.querySelectorAll("#button-container button");
+buttons.forEach( (b) => b.addEventListener('click', e => play(e.target)) );
+
+const selection = Array.of("rock", "paper", "scissors");
 
 function getComputersChoice() {
     let intBetweenZeroAndTwo = Math.floor(Math.random()*3)
@@ -15,8 +15,8 @@ function determineWinner(playerChoice, computerChoice) {
     if(playerChoice === computerChoice) {
         return "draw";
     } else if(
-        (playerChoice === "rock" && computerChoice === "scissor") ||
-        (playerChoice === "scissor" && computerChoice === "paper") ||
+        (playerChoice === "rock" && computerChoice === "scissors") ||
+        (playerChoice === "scissors" && computerChoice === "paper") ||
         (playerChoice === "paper" && computerChoice === "rock")
         ) {
             return "player";
@@ -25,21 +25,11 @@ function determineWinner(playerChoice, computerChoice) {
     } 
 }
 
-function getPlayerChoice() {
-    let playerChoice = prompt("Pick rock, paper or scissor:");
-    if(selection.includes(playerChoice.toLowerCase())) {
-        return playerChoice.toLowerCase();
-    } else {
-        console.log(playerChoice + " invalid.");
-        alert(playerChoice + " invalid");
-        return undefined;
-    }
-}
-
-function play() {
-    let playerChoice = getPlayerChoice();
+function play(t) {
+    let playerChoice = t.nodeName === 'IMG' ? t.parentElement.id : t.id;
+    console.log(`You chose ${playerChoice}`);
     let computerChoice = getComputersChoice();
-    if(playerChoice !== undefined) {
+    if(selection.includes(playerChoice)) {
         let winner = determineWinner(playerChoice, computerChoice);
         picked.textContent = `You played ${playerChoice}. Computer played ${computerChoice}. Winner is: ${winner}!`;
     } else {
