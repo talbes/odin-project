@@ -6,6 +6,7 @@
     <script src="./script.js" defer></script>
     <script src="./rps.js" defer></script>
     <script src="./dom-manipulation.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>Javascript</title>
 </head>
 <body>
@@ -15,16 +16,22 @@
         console.log('Hello, world!!!')
         console.log('I am being executed directly from within the html body.')
     </script>
+    <h2>Rock paper scissors</h2>
+    <div id="game">
+        <p>Pick scissors, paper, or rock!</p>
+        <div id="button-container">
+            <button id="scissors"><img src="images/scissors.jpg"></button>
+            <button id="paper"><img src="images/paper.png"></button>
+            <button id="rock"><img src="images/rock.png"></button>
+        </div>
+        <!-- <button id="btn2">Start playing!</button> -->
+        <p id="picked"></p>
+    </div>
     <h2>Shopping list</h2>
     <label for="product">Enter new item:</label>
     <input type="text" name="product" id="item">
     <button type="button" id="btn-add-to-cart">Add item</button>
     <ul id="shopping-cart"></ul>
-    <h2>Rock paper scissor</h2>
-    <div id="game">
-        <button id="btn2">Start playing!</button>
-        <p id="picked"></p>
-    </div>
     <h2>Testing scripts</h2>
     <h3>What am I typing?</h3>
     <input type="text" id="fld">

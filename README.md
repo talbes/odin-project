@@ -12,3 +12,4 @@ Assignment to create modern website using flexbox
 
 # 3-javascript-fundamentals
 Simple scripting exercises
+Including game: rock paper scissors
