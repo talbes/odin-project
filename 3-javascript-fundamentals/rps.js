@@ -27,18 +27,22 @@ function determineWinner(playerChoice, computerChoice) {
 
 function getPlayerChoice() {
     let playerChoice = prompt("Pick rock, paper or scissor:");
-    if(!selection.includes(playerChoice.toLowerCase())) {
+    if(selection.includes(playerChoice.toLowerCase())) {
+        return playerChoice.toLowerCase();
+    } else {
         console.log(playerChoice + " invalid.");
         alert(playerChoice + " invalid");
         return undefined;
-    } else {
-        return playerChoice.toLowerCase();
     }
 }
 
 function play() {
     let playerChoice = getPlayerChoice();
     let computerChoice = getComputersChoice();
-    let winner = determineWinner(playerChoice, computerChoice);
-    picked.textContent = `You played ${playerChoice}. Computer played ${computerChoice}. Winner is: ${winner}!`;
+    if(playerChoice !== undefined) {
+        let winner = determineWinner(playerChoice, computerChoice);
+        picked.textContent = `You played ${playerChoice}. Computer played ${computerChoice}. Winner is: ${winner}!`;
+    } else {
+        picked.textContent = "Undefined input. Please enter rock, paper or scissor."
+    }
 }
