@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px
+}
+
+.grid-container {
+    display: grid;
+}
+
+.grid-item {
+}
+
+.uncolored {
+    background-color: gray;
+}
+
+.colored {
+    background-color: black;
+}
