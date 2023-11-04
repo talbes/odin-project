@@ -11,7 +11,7 @@ function setUpGrid(gridSize) {
         
         container.appendChild(itemDiv);
     }
-    container.setAttribute("style",`grid-template-columns: repeat(${gridSize}, minmax(10px, 50px)); grid-template-rows: repeat(${gridSize}, minmax(10px, 50px))`);
+    container.setAttribute("style",`grid-template-columns: repeat(${gridSize}, minmax(5px, 50px)); grid-template-rows: repeat(${gridSize}, minmax(5px, 50px))`);
     document.querySelectorAll(".grid-item")
             .forEach( i => {
                 i.addEventListener('mouseenter', (e) => {e.target.className='grid-item colored'});
