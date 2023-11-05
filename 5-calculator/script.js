@@ -58,6 +58,8 @@ function clickButton(e) {
             digitAction(t);
         } else if(t.className.includes("operator")) {
             operatorAction(t);
+        } else if(t.className.includes("clear")) {
+            clearLastElement(t);
         } else console.log("error in selction of button");
     }
     console.log(`Current calculation term: ${calculationTerm}`);
@@ -68,6 +70,23 @@ function clearAndUnlock(t) {
     calculationTerm = ""; operand1= ""; operand2 = ""; operator = "";
     display.value = calculationTerm;
     locked = false;
+}
+
+function clearLastElement(t) {
+    if(calculationTerm !== "") {
+        let lastElem = calculationTerm.split("").pop();
+        console.log(`Clearing last element: ${lastElem}`);
+        calculationTerm = calculationTerm.substring(0,calculationTerm.length-1);
+        display.value = calculationTerm;
+        if(operator == "") { //still at first operand
+            operand1 = operand1.substring(0,operand1.length-1);
+        } else if(operand2 == "") { // operator
+            operator = "";
+        } else { // operand2
+            operand2 = operand2.substring(0,operand2.length-1);
+        }
+    }
+    
 }
 
 function digitAction(t) {
