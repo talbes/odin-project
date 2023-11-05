@@ -37,3 +37,11 @@ function operate(operand1, operand2, operator) {
     }
     return result;   
 }
+
+let buttons = document.querySelectorAll(".button:not(.inactive)");
+buttons.forEach( 
+    b => {
+        b.addEventListener('click', t => console.log(`You clicked ${t.target.nodeName}`));
+        b.addEventListener('mouseenter', e => e.target.classList.add("mouse-over"));
+        b.addEventListener('mouseleave', e => e.target.classList.remove("mouse-over"));
+    });
